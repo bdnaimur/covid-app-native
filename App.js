@@ -1,20 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import Home from './src/screens/home';
+
 
 export default function App() {
+
+  const [loaded] = useFonts({
+    GraphikRegular: require('./assets/fonts/GraphikRegular.otf'),
+    GraphikMedium: require('./assets/fonts/GraphikMedium.otf'),
+    GraphikSemiBold: require('./assets/fonts/GraphikSemibold.otf'),
+  });
+
+  if (!loaded) {
+    return null;
+  } 
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    < >
+      <Home/>
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
