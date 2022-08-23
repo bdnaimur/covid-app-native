@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, SafeAreaView } from 'react-native';
 import GlobalStyles from '../../GlobalStyles';
 import { bg } from '../theme/colors';
 import { Octicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Home() {
     return (
-        <View style={GlobalStyles.androidSafeArea}>
+        <SafeAreaView style={GlobalStyles.androidSafeArea}>
             <View style={styles.wrapper}>
                 <View style={{ marginHorizontal: 20 }}>
                     <View style={styles.inside}>
@@ -131,7 +131,7 @@ export default function Home() {
 
                 </LinearGradient>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
